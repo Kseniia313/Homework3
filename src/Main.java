@@ -1,3 +1,5 @@
+import java.util.Locale;
+
 public class Main {
     public static void main(String[] args) {
         task1();
@@ -6,21 +8,23 @@ public class Main {
         task4();
         task5();
         task6();
+        task7();
+        task8();
     }
     public static void task1 (){
             System.out.println("Задача1");
             int cherries = 350;
-            System.out.println("Значение переменной " + " cherries " + " с типом " + " int " + "равно " + cherries);
+            System.out.println("Значение переменной cherries с типом int равно " + cherries);
             byte bananas = 120;
-        System.out.println("Значение переменной " + " bananas " + "с типом " + " byte " + " равно " + bananas);
-            short oranges = 100;
-        System.out.println("Значение переменной " + " oranges " + " с типом " + " short " + " равно " + oranges);
-            long strawberries = 500L;
-        System.out.println("Значение переменной " + " strawberries " + " с типом " + " long " + " равно " + strawberries);
-            float apples = 5.5f;
-        System.out.println("Значение переменной " + " apples " + " с типом " + " float " + " равно " + apples);
-            double pears = 10.5;
-        System.out.println("Значение переменной " + " pears " + " с типом " + " double " + " равно " + pears);
+        System.out.println("Значение переменной bananas с типом byte равно "+ bananas);
+            short oranges = 10;
+        System.out.println("Значение переменной oranges с типом short равно " + oranges);
+            long strawberries = 5_000_000L;
+        System.out.println("Значение переменной strawberries с типом long равно " + strawberries);
+            float apples = 5.55555f;
+        System.out.println("Значение переменной apples с типом float равно " + apples);
+            double pears = 10.55678;
+        System.out.println("Значение переменной pears с типом double равно " + pears);
 
         }
         public static void task2(){
@@ -48,22 +52,23 @@ public class Main {
         public static void task4(){
             System.out.println("Задача 4");
             System.out.println("Производительность машины 16 бутылок за 2 минуты");
-            byte productivityForOneminute = 16/2;
-            int productivityForTwentyminutes = productivityForOneminute*20;
-            System.out.println("За 20 минут машина произвела " + productivityForTwentyminutes + " штук бутылок");
-            int productivityForDay = productivityForTwentyminutes*3*24;
-            System.out.println("За сутки машина произвела " + productivityForDay + " штук бутылок");
-            int productivityForThreeDays = productivityForDay*3;
-            System.out.println("За три дня машина произвела " + productivityForThreeDays + " штук бутылок");
-            int productivityForOneMonth = productivityForThreeDays*10;
-            System.out.println("За месяц машина произвела " + productivityForOneMonth + " штук бутылок");
+            byte productivityPerOneminute = 16/2;
+            int productivityPerTwentyminutes = productivityPerOneminute*20;
+            System.out.println("За 20 минут машина произвела " + productivityPerTwentyminutes + " штук бутылок");
+            int productivityPerHour = productivityPerTwentyminutes*3;
+            int productivityPerDay = productivityPerHour*24;
+            System.out.println("За сутки машина произвела " + productivityPerDay + " штук бутылок");
+            int productivityPerThreeDays = productivityPerDay*3;
+            System.out.println("За три дня машина произвела " + productivityPerThreeDays + " штук бутылок");
+            int productivityPerOneMonth = productivityPerThreeDays*10;
+            System.out.println("За месяц машина произвела " + productivityPerOneMonth + " штук бутылок");
         }
         public static void task5(){
             System.out.println("Задача 5");
-            int totalColors = 120;
-            int oneClassWhite = 2;
-            int oneClassBrown = 4;
-            int totalClasses = totalColors/(oneClassWhite+oneClassBrown);
+            byte totalColors = 120;
+            byte oneClassWhite = 2;
+            byte oneClassBrown = 4;
+            int totalClasses = (totalColors/(oneClassWhite+oneClassBrown));
             System.out.println("Всего в школе " + totalClasses + " классов");
             int totalWhiteColours = totalClasses*oneClassWhite;
             int totalBrownColours = totalClasses*oneClassBrown;
@@ -71,12 +76,56 @@ public class Main {
         }
         public static void task6(){
             System.out.println("Задача 6");
-            int oneBanan = 80;
-            int oneMilk  = 105;
-            int oneIcecream = 100;
-            int oneEgg = 70;
-            int totalWeight = oneBanan*5+oneMilk*2+oneIcecream*2+oneEgg*4;
-            System.out.println("Вес завтрака спортсмена составляет " + totalWeight + " грамм ");
+            byte oneBanan = 80;
+            byte oneMilk  = 105;
+            byte oneIcecream = 100;
+            byte oneEgg = 70;
+            int totalWeightGr = oneBanan*5+oneMilk*2+oneIcecream*2+oneEgg*4;
+            System.out.println("Вес завтрака спортсмена составляет " + totalWeightGr + " грамм ");
+            double totalWeightKg = totalWeightGr/1000;
+            System.out.println("Вес завтрака спортсмена составляет " + totalWeightKg + " килограмм ");
         }
+        public static void task7(){
+            System.out.println(" Задача 7 ");
+            int needWeightForFit = 7_000;
+            int minLooseWeight = 250;
+            int maxLooseWeight = 500;
+            int needMaxDays = needWeightForFit/minLooseWeight;
+            int needMinDays = needWeightForFit/maxLooseWeight;
+            System.out.println(" При диете 250 грамм в день спортсмену понадобится " + needMaxDays + " дней ");
+            System.out.println(" При диете 500 грамм в день спортсмену понадобится " + needMinDays + " дней ");
+            double looseWeightAverage =  (minLooseWeight+maxLooseWeight)/2D;
+            System.out.println( " При среднем темпе похудения в день нужно терять " + looseWeightAverage + " грамм ");
+            double needDays3 = needWeightForFit/looseWeightAverage;
+            System.out.printf(Locale.US, " Чтобы похудеть при среднем темпе, спортсмену понадобится %.2f%n дней",needDays3);
+        }
+public static void task8(){
+    System.out.println(" Задача 8 ");
+    int salaryMasha = 67760;
+    int salaryDenis = 83690;
+    int salaryKristina = 76230;
+    System.out.println( " Заработная плата Маши " + salaryMasha + " рублей ");
+    System.out.println( " Заработная плата Дениса " + salaryDenis + " рублей ");
+    System.out.println( " Заработная плата Кристины " + salaryKristina + " рублей ");
+    int salaryMashaInYear = salaryMasha*12;
+    int salaryDenisInYear = salaryDenis*12;
+    int salaryKristinaInYear = salaryKristina*12;
+    float indexSalary = 1.1f;
+    float salaryMashaAfterIncreasing = 67760*indexSalary;
+    float salaryDenisAfterIncreasing = 83690*indexSalary;
+    float salaryKristinaAfterIncreasing = 76230*indexSalary;
+    float salaryMashaAfterIncreasingInYear = salaryMashaAfterIncreasing*12;
+    float salaryDenisAfterIncreasingInYear = salaryDenisAfterIncreasing*12;
+    float salaryKristinaAfterIncreasingInYear = salaryKristinaAfterIncreasing*12;
+    float differenceIncomeMasha = salaryMashaAfterIncreasingInYear-salaryMashaInYear;
+    float differenceIncomeDenis = salaryDenisAfterIncreasingInYear-salaryDenisInYear;
+    float differenceIncomeKristina = salaryKristinaAfterIncreasingInYear-salaryKristinaInYear;
+    System.out.println( " После повышения Маша получает " + salaryMashaAfterIncreasing + " рублей. " + " Годовой доход вырос на " + differenceIncomeMasha + " рублей ");
+    System.out.println( " После повышения Денис получает " + salaryDenisAfterIncreasing + " рублей. " + " Годовой доход вырос на " + differenceIncomeDenis + " рублей ");
+    System.out.println( " После повышения Кристина получает " + salaryKristinaAfterIncreasing + " рублей. " + " Годовой доход вырос на " + differenceIncomeKristina + " рублей ");
+
+
+
+}
 
     }
